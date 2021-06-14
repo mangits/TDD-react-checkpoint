@@ -1,6 +1,11 @@
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Posters from'./Components/Posters'
+import Navbar from'./Components/Navbar'
+import Details from'./Components/Details'
+
+
 
 function App() {
 
@@ -16,18 +21,28 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-        {/* Header */} <header className="container-fluid"><h1>GMDB</h1></header>
-        {/* Navbar */} <div className="navbar"></div>
+    <Router>
+      <Switch>
+          <div className="App">
+              {/* Header */} <header className="container-fluid"><h1>GMDB</h1></header>
+              {/* Navbar */} <div className="navbar"><Navbar/></div>
 
-            {/* Body */} <div className="container-fluid body">
-                  {/* Main content*/} <div className = "main-content">
-                    <Posters movies={movies}/>
+                  {/* Body */} <div className="container-fluid body">
+                        {/* Main content*/} <div className = "main-content">
+                          {/* <Route exact path="/" render={(movies) => (<Posters movies={movies}/>)}/> */}
+
+                          <Route exact path="/"><Posters movies={movies}/></Route>
+                          <Route exact path="/movies/:id"><Details movies={movies}/></Route>
+
+
+                          {/* <Route exact path="/movies/:id" component={Details movies={movies}}/> */}
+                        </div>
                   </div>
-            </div>
 
-        {/* Footer */} <footer className="container-fluid">footer</footer>
-  </div>
+              {/* Footer */} <footer className="container-fluid">footer</footer>
+        </div>
+      </Switch>
+    </Router>
   );
 }
 

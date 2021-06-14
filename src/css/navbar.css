@@ -1,0 +1,41 @@
+.navbar {
+  background: rgb(43, 43, 46);
+  overflow: hidden;
+  align-items: center;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  padding: 1vw;
+}
+
+.navbar form {
+  float:right;
+  text-align: center;
+  padding: 1vw;
+}
+
+.navbar button {
+  background: rgb(43, 43, 46);
+  color: rgb(230, 198, 71);
+  border: 1px solid rgb(230, 198, 71);
+  border-radius: 3px;
+  padding: 7px 5px 7px 5px;
+}
+
+#home {
+  color: white;
+}
+
+#login {
+  color: grey;
+}
+
+#logo {
+  color: white;
+}
+
+.search-entry {
+padding: 7px 0px 7px 10px;
+}
