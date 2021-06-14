@@ -9,7 +9,8 @@ describe("Movie page", () => {
   it("Returns details of a specific movie", () => {
     cy.findByRole('img',{name: 'Guardians of the Galaxy Vol. 2'})
       .click()
-    expect(cy.url().should('include','/movies/1'))
+    expect(cy.url().should('include','/movies/0'))
+    cy.findByText('Guardians of the Galaxy Vol. 2')
   })
 
   // it("Returns a list of movies filtered on titles matching the given query", () => {

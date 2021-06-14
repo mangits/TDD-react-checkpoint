@@ -24,7 +24,6 @@ function App() {
     <Router>
       <Switch>
           <div className="App">
-              {/* Header */} <header className="container-fluid"><h1>GMDB</h1></header>
               {/* Navbar */} <div className="navbar"><Navbar/></div>
 
                   {/* Body */} <div className="container-fluid body">

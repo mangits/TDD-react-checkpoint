@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('Add recipe button toggles visibility of a form on the page ', () => {
+test('Clicking on a movie poster will povide movie details on a new page', () => {
 
   render(<App />);
   // `queryBy...` methods will return null if the element is not found:
@@ -11,7 +11,7 @@ test('Add recipe button toggles visibility of a form on the page ', () => {
 
   // `getBy...` methods will "throw" an error if the element is not found:
 
-  expect(moviePoster).nottoBeNull();
+  expect(moviePoster).not.toBe([]);
   userEvent.click(moviePoster);
-  expect(screen.getByLabelText("")).toBeInTheDocument();
+  expect(screen.getByLabelText("Title:")).toBeInTheDocument();
 });

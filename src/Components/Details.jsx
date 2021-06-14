@@ -2,10 +2,15 @@ import { useParams } from 'react-router-dom'
 
 function Details ({movies}) {
   let { id } = useParams();
+  // let movieIndex = movies.indexOf(movies.movieId)
+  let movie = movies[id]
 
   return (
     <>
-      {movies[id].title}
+      <div>Title: {movie.title}</div>
+      <div>{movie.released}</div>
+      <div>{movie.genre}</div>
+      <div>{movie.plot}</div>
     </>
   )
 }
